@@ -1,0 +1,14 @@
+section > div:first-child > .progress-bar > div:first-child {
+  width: 25%;
+  height: 100%;
+  background: black;
+}
+
+.progress-bar {
+  width: 180px;
+  height: 8px;
+
+  &, div {
+    border-radius: 30px;
+  }
+}

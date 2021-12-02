@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
+import Car from "./Views/Car";
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <>
+      <Car />
+    </>
   );
 }
 
