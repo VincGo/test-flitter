@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.scss';
-import logo from "../../Assets/img/Group 428.svg";
+import logo from "../../Assets/img/logo_flitter.svg";
+
 type HeaderProps = {headerArr: string[]}
 
 const Header = ({headerArr}: HeaderProps) => {
