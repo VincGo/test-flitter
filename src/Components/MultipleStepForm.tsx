@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Car from "../Views/Car/Car";
 import Profession from "../Views/Profession";
 import PersonalData from "../Views/PersonalData";
@@ -33,9 +33,18 @@ const MultipleStepForm = () => {
         setData({...data, step: data.step - 1})
     }
 
+    //Récupère les données des formulaires
+    function getData (name: string, value: string) {
+        setData({...data, [name]: value})
+    }
+
+    useEffect(() => {
+        console.log(data)
+    }, [data])
+
     switch (data.step) {
         case 1:
-            return <Car nextStep={nextStep}/>
+            return <Car nextStep={nextStep} getData={getData}/>
         case 2:
             return <Profession nextStep={nextStep} prevStep={prevStep}/>
         case 3:
@@ -44,7 +53,6 @@ const MultipleStepForm = () => {
             return <Result prevStep={prevStep}/>
     }
 
-    return (<div />)
-};
-
+    return (<div/>)
+}
 export default MultipleStepForm;

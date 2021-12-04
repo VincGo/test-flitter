@@ -27,10 +27,11 @@ export interface BrandLogoResult {
 }
 
 export interface nextStep {
-    nextStep: any
+    nextStep: any;
+    getData: any;
 }
 
-const Car = ({nextStep}: nextStep) => {
+const Car = ({nextStep, getData}: nextStep) => {
     const headerArr: string[] = ['voiture', 'infos', 'usage']
     const [brand, setBrand] = useState<BrandResult[] | []>([])
     const brandLogoArr: string[] = [peugeot, renault, citroen, volskwagen, toyota, mercedes, ford, bmw]
@@ -56,22 +57,14 @@ const Car = ({nextStep}: nextStep) => {
     }
 
     //Récupère l'ID et le nom de la marque lors du clique du logo
-    function getCarLogoValue (brand_id: number, brand: string) {
-        console.log(brand_id, brand)
-    }
-
-    //Récupère l'ID de la marque
-    function getIdBrand (name: string) {
-        if(name.length > 3) {
-            const arr = brand.filter(car => car.name.toLocaleLowerCase() === name.toLocaleLowerCase())
-            console.log(arr)
-        }
+    function getCarLogoValue ( name: string) {
+        getData("brand", name)
     }
 
     //Récupère la valeur de l'input
     function getInputBrand (e: ChangeEvent<HTMLInputElement>) {
         const inputValue = e.target.value
-        getIdBrand(inputValue)
+        getData("brand", inputValue)
     }
 
     function next (e: MouseEvent){
@@ -108,7 +101,7 @@ const Car = ({nextStep}: nextStep) => {
                 <p className={"color-gray font-size-14 mt-10"}>Cliquez sur le logo de votre marque ou tapez la dans la barre de recherche.</p>
                 <div className={"d-grid grid-template-c-4 grid-gap-8 mt-55"}>
                     {brandLogoResult && brandLogoResult.map((brand) =>
-                        <div key={brand.id} className={"card-logo d-grid border-r-10"} onClick={() => getCarLogoValue(brand.id, brand.name)}>
+                        <div key={brand.id} className={"card-logo d-grid border-r-10"} onClick={() => getCarLogoValue(brand.name)}>
                             <img className={"place-self-center"} src={brand.src} alt={brand.alt}/>
                         </div>
                     )}
