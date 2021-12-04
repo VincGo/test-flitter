@@ -1,4 +1,4 @@
-import React, {useEffect, useState, ChangeEvent} from 'react';
+import React, {useEffect, useState, ChangeEvent, MouseEvent} from 'react';
 import Header from "../../Components/Header/Header";
 import './car.scss'
 import search from "../../Assets/img/fp_search.svg"
@@ -26,7 +26,11 @@ export interface BrandLogoResult {
     alt: string;
 }
 
-const Car = () => {
+export interface nextStep {
+    nextStep: any
+}
+
+const Car = ({nextStep}: nextStep) => {
     const headerArr: string[] = ['voiture', 'infos', 'usage']
     const [brand, setBrand] = useState<BrandResult[] | []>([])
     const brandLogoArr: string[] = [peugeot, renault, citroen, volskwagen, toyota, mercedes, ford, bmw]
@@ -70,6 +74,11 @@ const Car = () => {
         getIdBrand(inputValue)
     }
 
+    function next (e: MouseEvent){
+        e.preventDefault()
+        nextStep()
+    }
+
     useEffect(() => {
         apiService.get()
             .then((data) => setBrand(data))
@@ -104,6 +113,7 @@ const Car = () => {
                         </div>
                     )}
                 </div>
+                <button onClick={next}>Suivant</button>
             </main>
         </div>
     );

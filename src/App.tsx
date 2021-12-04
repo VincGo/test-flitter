@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Car from "./Views/Car/Car";
+import MultipleStepForm from "./Components/MultipleStepForm";
 
 function App() {
   return (
     <>
-      <Car />
+      <MultipleStepForm />
     </>
   );
 }
