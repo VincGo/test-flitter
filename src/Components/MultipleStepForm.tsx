@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Car from "../Views/Car/Car";
-import Profession from "../Views/Profession";
+import Profession from "../Views/Profession/Profession";
 import PersonalData from "../Views/PersonalData";
 import Result from "../Views/Result";
 
@@ -46,7 +46,7 @@ const MultipleStepForm = () => {
         case 1:
             return <Car nextStep={nextStep} getData={getData} data={data.brand}/>
         case 2:
-            return <Profession nextStep={nextStep} prevStep={prevStep}/>
+            return <Profession nextStep={nextStep} prevStep={prevStep} getData={getData} data={data.job}/>
         case 3:
             return <PersonalData nextStep={nextStep} prevStep={prevStep}/>
         case 4:

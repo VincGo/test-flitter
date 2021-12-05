@@ -40,6 +40,14 @@
   display: flex;
 }
 
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 /* TEXT-ALIGN */
 .text-center {
   text-align: center;
@@ -55,6 +63,10 @@
   margin-bottom: 5px;
 }
 
+.mb-10 {
+  margin-bottom: 10px;
+}
+
 .ml-5 {
   margin-left: 5px;
 }
@@ -62,6 +74,10 @@
 .ml-10 {
   margin-left: 10px;
 }
+
+.ml-15 {
+  margin-left: 15px;
+}5
 
 .mt-10 {
   margin-top: 10px;

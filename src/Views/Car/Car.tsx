@@ -13,6 +13,7 @@ import toyota from "../../Assets/img/toyota.svg"
 import mercedes from "../../Assets/img/mercedes.svg"
 import ford from "../../Assets/img/ford.svg"
 import bmw from "../../Assets/img/bmw.svg"
+import {headerArr} from "../../Services/dataArray";
 
 export interface BrandResult {
     id: number;
@@ -33,7 +34,6 @@ export interface nextStep {
 }
 
 const Car = ({nextStep, getData, data}: nextStep) => {
-    const headerArr: string[] = ['voiture', 'infos', 'usage']
     const [brand, setBrand] = useState<BrandResult[] | []>([])
     const brandLogoArr: string[] = [peugeot, renault, citroen, volskwagen, toyota, mercedes, ford, bmw]
     const [brandLogoResult, setBrandLogoResult] = useState<BrandLogoResult[] | []>([])
