@@ -67,6 +67,10 @@
   margin-top: 10px;
 }
 
+.mt-30 {
+  margin-top: 30px;
+}
+
 .mt-55 {
   margin-top: 55px;
 }
@@ -89,14 +93,28 @@
   padding-right: 20px;
 }
 
+.px-30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .py-15 {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
+.py-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* COLOR */
 .bg-light-gray {
   background-color: #F6F6F6;
+}
+
+.bg-red {
+  background-color: #F45B69;
 }
 
 .bg-transparent {
@@ -111,6 +129,10 @@
   color: #8F8F98;
 }
 
+.color-white {
+  color: #FFFF;
+}
+
 /* FONT WEIGHT */
 .font-weight-700 {
   font-weight: 700;
@@ -119,6 +141,10 @@
 /* FONT-SIZE */
 .font-size-18 {
   font-size: 18px;
+}
+
+.font-size-16 {
+  font-size: 16px;
 }
 
 .font-size-14 {
@@ -144,4 +170,9 @@
 
 .outline-none {
   outline: none;
+}
+
+/* CURSOR */
+.pointer {
+  cursor: pointer;
 }
