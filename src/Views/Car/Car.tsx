@@ -31,9 +31,10 @@ export interface nextStep {
     nextStep: any;
     getData: any;
     data: string;
+    prevStep: any;
 }
 
-const Car = ({nextStep, getData, data}: nextStep) => {
+const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
     const [brand, setBrand] = useState<BrandResult[] | []>([])
     const brandLogoArr: string[] = [peugeot, renault, citroen, volskwagen, toyota, mercedes, ford, bmw]
     const [brandLogoResult, setBrandLogoResult] = useState<BrandLogoResult[] | []>([])
@@ -83,7 +84,7 @@ const Car = ({nextStep, getData, data}: nextStep) => {
 
     return (
         <div>
-            <Header headerArr={headerArr}/>
+            <Header headerArr={headerArr} prevStep={prevStep}/>
             <main>
                 <form id={"searchRegistration"} className={"bg-light-gray p-5 border-r-5 d-flex"}>
                     <img src={searchBold} alt="search flitter"/>

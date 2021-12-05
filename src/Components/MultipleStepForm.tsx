@@ -44,7 +44,7 @@ const MultipleStepForm = () => {
 
     switch (data.step) {
         case 1:
-            return <Car nextStep={nextStep} getData={getData} data={data.brand}/>
+            return <Car nextStep={nextStep} prevStep={prevStep} getData={getData} data={data.brand}/>
         case 2:
             return <Profession nextStep={nextStep} prevStep={prevStep} getData={getData} data={data.job}/>
         case 3:

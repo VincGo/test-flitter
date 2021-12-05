@@ -7,11 +7,12 @@ import button_plus from "../../Assets/img/button_plus.svg"
 
 export interface Step {
     nextStep: any;
+    prevStep: any;
     getData: any;
     data: string
 }
 
-const Profession = ({nextStep, getData, data}: Step) => {
+const Profession = ({nextStep, getData, data, prevStep}: Step) => {
     const [jobsArr, setJobsArr] = useState<string[]>([])
     const [moreProfession, setMoreProfession] = useState<boolean>(false)
 
@@ -59,7 +60,7 @@ const Profession = ({nextStep, getData, data}: Step) => {
 
     return (
         <div>
-            <Header headerArr={headerArr} />
+            <Header headerArr={headerArr} prevStep={prevStep}/>
             <main>
                 <Title title={"Votre profession"} />
                 {moreProfession ? allJob : jobLimited}

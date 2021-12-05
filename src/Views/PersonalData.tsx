@@ -1,6 +1,7 @@
 import React, {MouseEvent} from 'react';
 import Header from "../Components/Header/Header";
 import Title from "../Components/Title";
+import {headerArr} from "../Services/dataArray";
 
 export interface Step {
     nextStep: any;
@@ -9,24 +10,16 @@ export interface Step {
 
 const PersonalData = ({nextStep, prevStep}: Step) => {
 
-    const headerArr: string[] = ['voiture', 'infos', 'usage']
-
     function next (e: MouseEvent){
         e.preventDefault()
         nextStep()
     }
 
-    function prev (e: MouseEvent){
-        e.preventDefault()
-        prevStep()
-    }
-
     return (
         <div>
-            <Header headerArr={headerArr} />
+            <Header headerArr={headerArr} prevStep={prevStep}/>
             <main>
                 <Title title={"Une dernière chise !"} />
-                <button onClick={prev}>Retour</button>
                 <button onClick={next}>Suivant</button>
             </main>
         </div>
