@@ -3,6 +3,10 @@
   display: grid;
 }
 
+.grid-template-c-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .grid-template-c-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -181,7 +185,7 @@
 }
 
 .border-input {
-  border: 2px solid #8F8F98;
+  border: 3px solid #f6f6f6;
 }
 
 .outline-none {
@@ -191,4 +195,9 @@
 /* CURSOR */
 .pointer {
   cursor: pointer;
+}
+
+/* WIDTH */
+.w-100 {
+  width: 100%;
 }

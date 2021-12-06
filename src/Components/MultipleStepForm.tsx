@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Car from "../Views/Car/Car";
 import Profession from "../Views/Profession/Profession";
-import PersonalData from "../Views/PersonalData";
+import PersonalData from "../Views/PersonalData/PersonalData";
 import Result from "../Views/Result";
 
 export interface MultipleStepFormInterface {
