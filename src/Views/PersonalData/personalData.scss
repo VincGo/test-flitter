@@ -1,4 +1,4 @@
-#sendEstimate {
+#send_estimate {
   -moz-appearance:none;
   -webkit-appearance:none;
   outline: none;
@@ -8,11 +8,14 @@
     content: "\f00c";
     font-size: 15px;
     color: transparent !important;
-    background: white;
     display: block;
     width: 20px;
     height: 20px;
     border: 1px solid #8F8F98;
     border-radius: 7px;
+  }
+
+  &:checked:before {
+    background-color: #F45B69;
   }
 }

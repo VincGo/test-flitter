@@ -11,6 +11,7 @@ export interface MultipleStepFormInterface {
     first_name: string;
     last_name: string;
     email: string;
+    send_estimate: boolean;
 }
 
 const MultipleStepForm = () => {
@@ -21,6 +22,7 @@ const MultipleStepForm = () => {
         first_name: "",
         last_name: "",
         email: "",
+        send_estimate: false
     })
 
     //Formulaire suivant
@@ -48,7 +50,7 @@ const MultipleStepForm = () => {
         case 2:
             return <Profession nextStep={nextStep} prevStep={prevStep} getData={getData} data={data.job}/>
         case 3:
-            return <PersonalData nextStep={nextStep} prevStep={prevStep}/>
+            return <PersonalData nextStep={nextStep} prevStep={prevStep} getData={getData} data={data}/>
         case 4:
             return <Result prevStep={prevStep}/>
     }
