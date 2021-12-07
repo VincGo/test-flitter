@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Car from "../Views/Car/Car";
 import Profession from "../Views/Profession/Profession";
 import PersonalData from "../Views/PersonalData/PersonalData";
-import Result from "../Views/Result";
+import Result from "../Views/Result/Result";
 
 export interface MultipleStepFormInterface {
     step: number;

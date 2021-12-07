@@ -1,0 +1,29 @@
+#container-result {
+  width: 1200px;
+  margin: 30px auto;
+}
+.custom-radio {
+
+  input {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    outline: none;
+    content: none;
+    position: absolute;
+
+    &:checked + label {
+      border-color: #010038;
+      background-color: #F8FAFF;
+    }
+  }
+
+  label {
+    width: 160px;
+    height: 60px;
+  }
+}
+
+#resultPrice {
+  background-color: #FFFAEF;
+  width: 370px;
+}
