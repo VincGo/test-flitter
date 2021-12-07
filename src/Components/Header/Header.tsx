@@ -16,14 +16,14 @@ const Header = ({headerArr, prevStep}: HeaderProps) => {
     }
 
     return (
-        <nav className={"d-grid grid-template-c-3 shadow-sm pt-15 pb-25"}>
+        <nav className={"d-flex justify-content-evenly shadow-sm pt-15 pb-25"}>
             <div className={"d-flex justify-content-center pointer"} onClick={prev}>
                 <img id={"arrowLeft"} src={arrowLeft} alt="back"/>
                 <p className={"font-weight-700 color-light-black ml-10"}> Retour</p>
             </div>
             <section className={"d-grid grid-c-2 grid-template-c-3 grid-gap-15"}>
                 {headerArr.map((h, index) =>
-                    <div key={index} >
+                    <div key={index} className={"progress-container"}>
                         <p className={"text-center mb-5"}>{h}</p>
                         <div className={"progress-bar bg-light-gray"}>
                             <div/>

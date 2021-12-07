@@ -19,3 +19,14 @@
     background-color: #F45B69;
   }
 }
+
+@media screen and (max-width: 800px) {
+  #formName {
+    display: block!important;
+
+    & div:last-child {
+      margin-top: 30px;
+      margin-left: 0;
+    }
+  }
+}

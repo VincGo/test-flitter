@@ -11,3 +11,9 @@
   min-width: 170px;
   height: 60px;
 }
+
+@media screen and (max-width: 575px) {
+  #logoList {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

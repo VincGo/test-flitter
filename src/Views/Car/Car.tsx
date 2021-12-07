@@ -102,7 +102,7 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                 </datalist>
                 <p className={"color-gray font-size-14 mt-10"}>Cliquez sur le logo de votre marque ou tapez la dans la
                     barre de recherche.</p>
-                <div className={"d-grid grid-template-c-4 grid-gap-8 mt-55"}>
+                <div id={"logoList"} className={"d-grid grid-template-c-4 grid-gap-8 mt-55"}>
                     {brandLogoResult && brandLogoResult.map((brand) =>
                         <div key={brand.id} className={"card-logo d-grid border-r-10 pointer"}
                              onClick={() => getData("brand", brand.name)}>

@@ -45,7 +45,7 @@ const PersonalData = ({nextStep, prevStep, getData, data}: Step) => {
             <main>
                 <Title title={"Une dernière chose !"} />
                 <form>
-                    <div className={"d-flex"}>
+                    <div id={"formName"} className={"d-flex"}>
                         <div className={"d-flex border-input border-r-10 py-15 px-20"}>
                             <img src={userIcone} alt="nom"/>
                             <input className={"border-none outline-none font-size-18 w-100 ml-5"} type="text"

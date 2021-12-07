@@ -16,3 +16,25 @@ section > div:first-child > .progress-bar > div:first-child {
 #arrowLeft {
   width: 24px;
 }
+
+@media screen and (max-width: 800px) {
+  nav {
+    section .progress-container:nth-child(2), .progress-container:nth-child(3){
+      display: none;
+    }
+
+    section {
+      grid-template-columns: auto!important;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    justify-content: space-between!important;
+    padding: 0 25px;
+    section {
+      display: none!important;
+    }
+  }
+}
