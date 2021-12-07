@@ -52,7 +52,7 @@ const MultipleStepForm = () => {
         case 3:
             return <PersonalData nextStep={nextStep} prevStep={prevStep} getData={getData} data={data}/>
         case 4:
-            return <Result prevStep={prevStep}/>
+            return <Result prevStep={prevStep} data={data}/>
     }
 
     return (<div/>)

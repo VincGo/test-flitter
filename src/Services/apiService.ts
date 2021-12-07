@@ -22,4 +22,26 @@ export const apiService = {
             return console.log(err)
         }
     },
+
+    //Récupère le prix de l'assurance
+    async getPrice(data: object){
+        try {
+            const response = await axios
+                .post("https://test-api-7qyau6jusq-oa.a.run.app/api/v1/quote/price", data)
+            return response.data
+        } catch (err) {
+            return console.log(err)
+        }
+    },
+
+    //CHange le prix en fonction des franchises choisies
+    async changePrice(data: object){
+        try {
+            const response = await axios
+                .put("https://test-api-7qyau6jusq-oa.a.run.app/api/v1/quote/price", data)
+            return response.data
+        } catch (err) {
+            return console.log(err)
+        }
+    },
 }
