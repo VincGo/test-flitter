@@ -1,4 +1,55 @@
-.inputRadio {
-  width: 24px;
-  height: 24px;
+$accentcolor: #fcae2c;
+$lightcolor: #fff;
+$darkcolor: #444;
+
+.inputProfession {
+  position: relative;
+  display: block;
+  label {
+    display: block;
+    border-radius: 10px;
+    padding: 20px;
+    border: 3px solid #DDDDDE;
+    margin-bottom: 5px;
+    cursor: pointer;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 11px;
+      top: 20px;
+      width: 24px;
+      height: 24px;
+      border-radius: 20px;
+      border: 3px solid #DDDDDE;
+    }
+    &:before {
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: block;
+      background-image: url("../../Assets/img/vector.png");
+      position: absolute;
+      right: 13px;
+      top: 22px;
+    }
+  }
+  input[type="radio"] {
+    display: none;
+    position: absolute;
+    width: 100%;
+    appearance: none;
+    &:checked + label {
+      border-color: #010038;
+      background-color: #F8FAFF;
+      &:after {
+        //background: #010038;
+        border: 3px solid #010038;
+      }
+      &:before {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
 }
