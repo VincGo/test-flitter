@@ -65,6 +65,15 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
         const arr = brand.filter(brand => brand.name.toLocaleLowerCase() === inputValue.toLocaleLowerCase())
         if (arr.length > 0) {
             getData("brand", arr[0].name)
+            unChecked()
+        }
+    }
+
+    //Retire le checked sur l'input si la marque est choisi par la barre de recherche
+    function unChecked() {
+        const inputChecked = document.querySelector("input:checked") as HTMLInputElement
+        if(inputChecked ) {
+            inputChecked.checked = false
         }
     }
 
@@ -96,7 +105,7 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                 <form className={"border-r-10 d-flex border-input px-20 py-15"}>
                     <img src={search} alt="Filter models"/>
                     <input className={"border-none ml-10 font-size-18 color-gray outline-none"} type="text"
-                           placeholder={"Marque ou modèle"} list={"data-list-brand"} onChange={getInputBrand}/>
+                           placeholder={"Marque ou modèle"} list={"data-list-brand"} onChange={getInputBrand} />
                 </form>
                 <datalist id={"data-list-brand"}>
                     {brand && brand.map((b) => <option key={b.id} value={b.name}/>)}
@@ -120,7 +129,8 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                         </div>
                     )}
                 </div>
-                {data && <button onClick={next} className={"nextButton bg-red border-r-10 font-weight-700 color-white border-none font-size-16 mt-30 pointer"}>
+                {data && <button onClick={next}
+                                 className={"nextButton bg-red border-r-10 font-weight-700 color-white border-none font-size-16 mt-30 pointer"}>
                     Suivant
                 </button>}
             </main>
