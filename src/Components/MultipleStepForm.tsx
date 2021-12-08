@@ -7,6 +7,7 @@ import Result from "../Views/Result/Result";
 export interface MultipleStepFormInterface {
     step: number;
     brand: string;
+    brand_id: number;
     job: string;
     first_name: string;
     last_name: string;
@@ -18,6 +19,7 @@ const MultipleStepForm = () => {
     const [data, setData] = useState<MultipleStepFormInterface>({
         step: 1,
         brand: "",
+        brand_id: 0,
         job: "",
         first_name: "",
         last_name: "",
@@ -40,13 +42,17 @@ const MultipleStepForm = () => {
         setData({...data, [name]: value})
     }
 
+    function brandData (id: number, name: string) {
+        setData({...data, brand: name, brand_id: id})
+    }
+
     useEffect(() => {
         console.log(data)
     }, [data])
 
     switch (data.step) {
         case 1:
-            return <Car nextStep={nextStep} prevStep={prevStep} getData={getData} data={data.brand}/>
+            return <Car nextStep={nextStep} prevStep={prevStep} data={data.brand} brandData={brandData}/>
         case 2:
             return <Profession nextStep={nextStep} prevStep={prevStep} getData={getData} data={data.job}/>
         case 3:

@@ -38,6 +38,9 @@ const Result = ({prevStep, data}: Step) => {
         excess_da: "",
         excess_bdg: ""
     })
+    const [model, setModel] = useState<string>("")
+
+    const fullNameCar = data.brand + " " + model
 
     //Récupère le prix
     function getPrice() {
@@ -66,8 +69,15 @@ const Result = ({prevStep, data}: Step) => {
             .catch(err => console.log(err))
     }
 
+    function getModel() {
+        apiService.getModel(data.brand_id)
+            .then(res => setModel(res.name))
+            .catch(err => console.log(err))
+    }
+
     useEffect(() => {
         getPrice()
+        getModel()
     }, [])
 
     return (
@@ -110,8 +120,7 @@ const Result = ({prevStep, data}: Step) => {
                     <div className={"bg-white border-r-10 p-10 border-input m-30"}>
                         <div className={"d-flex px-10"}>
                             <img src={logoCar} alt="logo car"/>
-                            <p className={"ml-20 font-weight-700 line-h-20 color-light-black font-size-14"}>Tesla Model
-                                3 Long Range v1.2 4 Seat Backslash</p>
+                            <p className={"ml-20 font-weight-700 line-h-20 color-light-black font-size-14"}>{fullNameCar}</p>
                         </div>
                         <hr className={"border-hr m-0"}/>
                         <div className={"d-flex px-10"}>

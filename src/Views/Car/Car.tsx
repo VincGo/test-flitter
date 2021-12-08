@@ -30,12 +30,12 @@ export interface BrandLogoResult {
 
 export interface nextStep {
     nextStep: any;
-    getData: any;
     data: string;
     prevStep: any;
+    brandData: any;
 }
 
-const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
+const Car = ({nextStep, data, prevStep, brandData}: nextStep) => {
     const [brand, setBrand] = useState<BrandResult[] | []>([])
     const brandLogoArr: string[] = [peugeot, renault, citroen, volskwagen, toyota, mercedes, ford, bmw]
     const [brandLogoResult, setBrandLogoResult] = useState<BrandLogoResult[] | []>([])
@@ -64,7 +64,7 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
         const inputValue = e.target.value
         const arr = brand.filter(brand => brand.name.toLocaleLowerCase() === inputValue.toLocaleLowerCase())
         if (arr.length > 0) {
-            getData("brand", arr[0].name)
+            brandData(arr[0].id, arr[0].name)
             unChecked()
         }
     }
@@ -72,7 +72,7 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
     //Retire le checked sur l'input si la marque est choisi par la barre de recherche
     function unChecked() {
         const inputChecked = document.querySelector("input:checked") as HTMLInputElement
-        if(inputChecked ) {
+        if (inputChecked) {
             inputChecked.checked = false
         }
     }
@@ -105,7 +105,7 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                 <form className={"border-r-10 d-flex border-input px-20 py-15"}>
                     <img src={search} alt="Filter models"/>
                     <input className={"border-none ml-10 font-size-18 color-gray outline-none"} type="text"
-                           placeholder={"Marque ou modèle"} list={"data-list-brand"} onChange={getInputBrand} />
+                           placeholder={"Marque ou modèle"} list={"data-list-brand"} onChange={getInputBrand}/>
                 </form>
                 <datalist id={"data-list-brand"}>
                     {brand && brand.map((b) => <option key={b.id} value={b.name}/>)}
@@ -121,7 +121,7 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                     {brandLogoResult && brandLogoResult.map((brand) =>
                         <div key={brand.id} className={"card-logo mr-10 mb-10"}>
                             <input type="radio" id={brand.name} name={"carLogo"}
-                                   value={brand.name} onChange={() => getData("brand", brand.name)}/>
+                                   value={brand.name} onChange={() => brandData(brand.id, brand.name)}/>
                             <label htmlFor={brand.name}
                                    className={"color-light-black font-size-18 border-r-10 d-flex justify-content-center align-items-center"}>
                                 <img src={brand.src} alt={brand.alt}/>
