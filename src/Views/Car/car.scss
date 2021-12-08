@@ -2,7 +2,13 @@
   width: 247px;
 }
 
+#logoList {
+  flex-wrap: wrap;
+}
+
 .card-logo {
+  width: 23%;
+
   input {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -30,7 +36,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  #logoList {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .card-logo {
+    width: 46%;
   }
 }

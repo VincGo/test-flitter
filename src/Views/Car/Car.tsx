@@ -14,6 +14,7 @@ import mercedes from "../../Assets/img/mercedes.svg"
 import ford from "../../Assets/img/ford.svg"
 import bmw from "../../Assets/img/bmw.svg"
 import {headerArr} from "../../Services/dataArray";
+import Loader from "react-loader-spinner"
 
 export interface BrandResult {
     id: number;
@@ -102,9 +103,14 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                 </datalist>
                 <p className={"color-gray font-size-14 mt-10"}>Cliquez sur le logo de votre marque ou tapez la dans la
                     barre de recherche.</p>
-                <div id={"logoList"} className={"d-grid grid-template-c-4 grid-gap-8 mt-55"}>
+                <div id={"logoList"} className={`mt-55 d-flex ${brand.length === 0 ? "justify-content-center" : ""}`}>
+                    {brand.length === 0 &&
+                        <div>
+                            <Loader type={"TailSpin"} color="#24376f" height={80} width={80}/>
+                        </div>
+                    }
                     {brandLogoResult && brandLogoResult.map((brand) =>
-                        <div key={brand.id} className={"card-logo"}>
+                        <div key={brand.id} className={"card-logo mr-10 mb-10"}>
                             <input type="radio" id={brand.name} name={"carLogo"}
                                    value={brand.name} onChange={() => getData("brand", brand.name)}/>
                             <label htmlFor={brand.name}
