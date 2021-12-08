@@ -3,8 +3,25 @@
 }
 
 .card-logo {
-  background-color: #F8FAFF;
-  height: 125px;
+  input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    content: none;
+    position: absolute;
+
+    &:checked + label {
+      border: 3px solid #010038;
+      background-color: #F8FAFF;
+    }
+  }
+
+  label {
+    background-color: #F8FAFF;
+    border: 3px solid #F8FAFF;
+    height: 125px;
+  }
+
 }
 
 .nextButton {

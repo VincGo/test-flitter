@@ -104,9 +104,13 @@ const Car = ({nextStep, getData, data, prevStep}: nextStep) => {
                     barre de recherche.</p>
                 <div id={"logoList"} className={"d-grid grid-template-c-4 grid-gap-8 mt-55"}>
                     {brandLogoResult && brandLogoResult.map((brand) =>
-                        <div key={brand.id} className={"card-logo d-grid border-r-10 pointer"}
-                             onClick={() => getData("brand", brand.name)}>
-                            <img className={"place-self-center"} src={brand.src} alt={brand.alt}/>
+                        <div key={brand.id} className={"card-logo"}>
+                            <input type="radio" id={brand.name} name={"carLogo"}
+                                   value={brand.name} onChange={() => getData("brand", brand.name)}/>
+                            <label htmlFor={brand.name}
+                                   className={"color-light-black font-size-18 border-r-10 d-flex justify-content-center align-items-center"}>
+                                <img src={brand.src} alt={brand.alt}/>
+                            </label>
                         </div>
                     )}
                 </div>
